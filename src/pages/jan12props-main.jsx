@@ -1,20 +1,22 @@
+import List1 from "../component/firstname";
+import List2 from "@/component/score";
+import List3 from "@/component/lastname";
 
-import List1 from "../component/Propsjan12";
-import List2 from "@/component/Propsjan12-2";
-import List3 from "@/component/Propsjan12-3";
-
-
-const style= {
-  flex:{
-    display:"flex",
-   justifyContent:"center",
-   alignItems:"center",
-marginTop:"50px",
-padding:"10px",
-backgroundColor:"white",
-width:"auto",
-height:"100%",
-gap:"10px"
+const style = {
+  flex: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: "50px",
+    padding: "10px",
+    backgroundColor: "white",
+    width: "auto",
+    height: "100%",
+    gap: "10px",
+  },
+  box: {
+    width: "390px",
+    height: "auto",
   },
 };
 
@@ -34,16 +36,33 @@ gap:"10px"
 //   );
 // };
 
-const arr =  [    {      firstName: "Duluu",      score: "100",      lastName: "Bill",      age: 121212,      work: "Pinecone",    },    {      name: "Dashka",      score: "69",      lastName: "Bill",      age: 121212,      work: "Pinecone",    },  ];
+const arr = [
+  {
+    firstName: "Duluu",
+    score: "100",
+    lastName: "Bill",
+    age: 121212,
+    work: "Pinecone",
+  },
+  {
+    firstName: "Dashka",
+    score: "69",
+    lastName: "Billy",
+    age: 121212,
+    work: "Pinecone",
+  },
+];
 
-
-export default function Example(){
-  
-    return (<div >{arr.map((el)=>{
-      
- <List1 firstName={el.lastName}> </List1>,
- <List2 score={el.score}></List2>,
-< List3 lastName={el.lastName}></List3>
-      })}</div>)
- 
-};
+export default function Example() {
+  return (
+    <div>
+      {arr.map((el) => (
+        <div style={style.flex}>
+          <List1 firstName={el.firstName} age={el.age}></List1>
+          <List2 score={el.score}></List2>
+          <List3 lastName={el.lastName} work={el.work}></List3>
+        </div>
+      ))}
+    </div>
+  );
+}
